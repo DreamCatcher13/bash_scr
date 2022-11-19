@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+# for creating a new file
+
+for file in modules/*/; do
+  touch $file/variables.tf;
+done
+
+# to insert a line after a match ; i - before the match
+
+sed -i '/^  name:.*/a\  namespace: app-inf' bckt.yml
+
+
